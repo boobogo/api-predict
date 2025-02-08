@@ -7,6 +7,11 @@ app = Flask(__name__)
 # Load the trained model
 model = joblib.load('best_knn_model.pkl')
 
+# Root endpoint (GET request)
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify({"message": "KNN Model API is running"}), 200
+
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.json
