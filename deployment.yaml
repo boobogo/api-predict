@@ -15,6 +15,7 @@ spec:
       containers:
         - name: api-predict
           image: boobogo/api-predict:latest
+          imagePullPolicy: Always  # Force pulling the image on every deployment
           ports:
             - containerPort: 5000
             
