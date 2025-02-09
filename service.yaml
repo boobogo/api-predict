@@ -3,11 +3,10 @@ kind: Service
 metadata:
   name: api-predict-service
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: api-predict
   ports:
     - protocol: TCP
       port: 80
       targetPort: 5000
-      nodePort: 30081  #expose app on port 30081
